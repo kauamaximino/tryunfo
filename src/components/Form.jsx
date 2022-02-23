@@ -5,23 +5,85 @@ class Form extends Component {
     return (
       <div>
         <form>
-          <input data-testid="name-input" name="name" type="text" />
-          <textarea data-testid="description-input" name="textarea" cols="30" rows="10" />
-          <input data-testid="attr1-input" name="attributes" type="number" />
-          <input data-testid="attr2-input" name="attributes2" type="number" />
-          <input data-testid="attr3-input" name="attributes3" type="number" />
-          <input data-testid="image-input" name="imageText" type="text" />
-          <select data-testid="rare-input" name="" id="">
-            <option value="normal">normal</option>
-            <option value="raro">raro</option>
-            <option value="muito raro">muito raro</option>
-          </select>
-          <input
-            data-testid="trunfo-input"
-            name="super-trunfo"
-            type="checkbox"
-          />
-          <button data-testid="save-button" type="button">Salvar</button>
+          <label htmlFor="name">
+            Nome:
+            <input
+              data-testid="name-input"
+              id="name"
+              type="text"
+            />
+          </label>
+
+          <label htmlFor="textarea">
+            Descrição da carta:
+            <textarea
+              data-testid="description-input"
+              id="textarea"
+              cols="30"
+              rows="10"
+            />
+          </label>
+
+          <label htmlFor="attributes">
+            Atributo 1:
+            <input
+              data-testid="attr1-input"
+              id="attributes"
+              type="number"
+            />
+          </label>
+
+          <label htmlFor="attributes2">
+            Atributo 2:
+            <input
+              data-testid="attr2-input"
+              id="attributes2"
+              type="number"
+            />
+          </label>
+
+          <label htmlFor="attributes3">
+            Atributo 3:
+            <input
+              data-testid="attr3-input"
+              id="attributes3"
+              type="number"
+            />
+          </label>
+
+          <label htmlFor="imageText">
+            Imagem:
+            <input
+              data-testid="image-input"
+              id="imageText"
+              type="text"
+            />
+          </label>
+
+          <label htmlFor="select-rare">
+            Raridade:
+            <select
+              data-testid="rare-input"
+              id="select-rare"
+            >
+              <option value="normal">normal</option>
+              <option value="raro">raro</option>
+              <option value="muito raro">muito raro</option>
+            </select>
+          </label>
+
+          <label htmlFor="super-trunfo">
+            Super Trybe Trunfo:
+            <input
+              data-testid="trunfo-input"
+              id="super-trunfo"
+              type="checkbox"
+            />
+          </label>
+
+          <button data-testid="save-button" type="button">
+            Salvar
+          </button>
         </form>
       </div>
     );
