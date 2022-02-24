@@ -25,6 +25,7 @@ class Form extends Component {
             Nome:
             <input
               data-testid="name-input"
+              name="cardName"
               id="name"
               type="text"
               value={ cardName }
@@ -36,6 +37,7 @@ class Form extends Component {
             Descrição da carta:
             <textarea
               data-testid="description-input"
+              name="cardDescription"
               id="textarea"
               cols="30"
               rows="10"
@@ -48,6 +50,7 @@ class Form extends Component {
             Atributo 1:
             <input
               data-testid="attr1-input"
+              name="cardAttr1"
               id="attributes"
               type="number"
               value={ cardAttr1 }
@@ -59,6 +62,7 @@ class Form extends Component {
             Atributo 2:
             <input
               data-testid="attr2-input"
+              name="cardAttr2"
               id="attributes2"
               type="number"
               value={ cardAttr2 }
@@ -70,6 +74,7 @@ class Form extends Component {
             Atributo 3:
             <input
               data-testid="attr3-input"
+              name="cardAttr3"
               id="attributes3"
               type="number"
               value={ cardAttr3 }
@@ -81,6 +86,7 @@ class Form extends Component {
             Imagem:
             <input
               data-testid="image-input"
+              name="cardImage"
               id="imageText"
               type="text"
               value={ cardImage }
@@ -92,6 +98,7 @@ class Form extends Component {
             Raridade:
             <select
               data-testid="rare-input"
+              name="cardRare"
               id="select-rare"
               value={ cardRare }
               onChange={ onInputChange }
@@ -106,6 +113,7 @@ class Form extends Component {
             Super Trybe Trunfo:
             <input
               data-testid="trunfo-input"
+              name="cardTrunfo"
               id="super-trunfo"
               type="checkbox"
               checked={ cardTrunfo }
