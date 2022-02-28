@@ -46,13 +46,14 @@ class Form extends Component {
             />
           </label>
 
-          <label htmlFor="attributes">
+          <label htmlFor="attributes1">
             Atributo 1:
             <input
               data-testid="attr1-input"
               name="cardAttr1"
-              id="attributes"
+              id="attributes1"
               type="number"
+              max="90"
               value={ cardAttr1 }
               onChange={ onInputChange }
             />
