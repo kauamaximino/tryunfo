@@ -90,8 +90,14 @@ class App extends React.Component {
     }
   }
 
+  removeCard = ({ target: { id } }) => {
+    const { saveCard } = this.state;
+    this.setState(({ saveCard: saveCard.filter((item) => item.cardName !== id) }),
+      this.validateTrunfo);
+  };
+
   render() {
-    const { state, onSaveButtonClick, onInputChange } = this;
+    const { state, onSaveButtonClick, onInputChange, removeCard } = this;
 
     return (
       <div>
@@ -125,6 +131,15 @@ class App extends React.Component {
             <Card
               { ...elem }
             />
+            <button
+              data-testid="delete-button"
+              type="button"
+              id={ elem.cardName }
+              onClick={ removeCard }
+            >
+              Excluir
+            </button>
+
           </section>
         ))}
       </div>
