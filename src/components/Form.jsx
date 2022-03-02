@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Form extends Component {
-  // hasTrunfo foi removido pois não passava no lint
   render() {
     const {
       cardName,
@@ -13,6 +12,7 @@ class Form extends Component {
       cardImage,
       cardRare,
       cardTrunfo,
+      hasTrunfo,
       isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick,
@@ -110,18 +110,20 @@ class Form extends Component {
             </select>
           </label>
 
-          <label htmlFor="super-trunfo">
-            Super Trybe Trunfo:
-            <input
-              data-testid="trunfo-input"
-              name="cardTrunfo"
-              id="super-trunfo"
-              type="checkbox"
-              checked={ cardTrunfo }
-              onChange={ onInputChange }
-            />
-          </label>
-
+          { hasTrunfo ? 'Você já tem um Super Trunfo em seu baralho' : (
+            <label htmlFor="super-trunfo">
+              Super Trybe Trunfo:
+              <input
+                data-testid="trunfo-input"
+                name="cardTrunfo"
+                id="super-trunfo"
+                type="checkbox"
+                value={ cardTrunfo }
+                checked={ cardTrunfo }
+                onChange={ onInputChange }
+              />
+            </label>
+          )}
           <button
             data-testid="save-button"
             type="button"
@@ -145,7 +147,7 @@ Form.propTypes = {
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
-  // hasTrunfo: PropTypes.bool.isRequired,
+  hasTrunfo: PropTypes.bool.isRequired,
   isSaveButtonDisabled: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,
