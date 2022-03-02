@@ -77,15 +77,16 @@ class App extends React.Component {
       cardAttr3: '0',
       cardImage: '',
       cardRare: 'normal',
+      cardTrunfo: false,
     }, this.validateTrunfo);
   }
 
   validateTrunfo = () => {
     const { saveCard } = this.state;
     if (saveCard.some((elem) => elem.cardTrunfo === true)) {
-      this.setState({ hasTrunfo: false });
-    } else {
       this.setState({ hasTrunfo: true });
+    } else {
+      this.setState({ hasTrunfo: false });
     }
   }
 
@@ -119,15 +120,13 @@ class App extends React.Component {
           cardTrunfo={ state.cardTrunfo }
         />
 
-        <section>
-          {state.saveCard.map((cardGame) => (
-            <div key={ cardGame.cardName }>
-              <Card
-                { ...cardGame }
-              />
-            </div>
-          ))}
-        </section>
+        {state.saveCard.map((elem) => (
+          <section key={ elem.cardName }>
+            <Card
+              { ...elem }
+            />
+          </section>
+        ))}
       </div>
     );
   }
