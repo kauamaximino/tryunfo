@@ -79,16 +79,34 @@ class App extends React.Component {
   }
 
   render() {
-    const { state } = this;
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+      isSaveButtonDisabled,
+    } = this.state;
+
     return (
       <div>
         <Form
-          { ...state }
+          isSaveButtonDisabled={ isSaveButtonDisabled }
           onInputChange={ this.changeState }
           onSaveButtonClick={ this.onSaveButtonClick }
         />
         <Card
-          { ...state }
+          cardName={ cardName }
+          cardDescription={ cardDescription }
+          cardAttr1={ cardAttr1 }
+          cardAttr2={ cardAttr2 }
+          cardAttr3={ cardAttr3 }
+          cardImage={ cardImage }
+          cardRare={ cardRare }
+          cardTrunfo={ cardTrunfo }
         />
       </div>
     );
