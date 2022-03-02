@@ -83,9 +83,9 @@ class App extends React.Component {
   validateTrunfo = () => {
     const { saveCard } = this.state;
     if (saveCard.some((elem) => elem.cardTrunfo === true)) {
-      this.setState({ hasTrunfo: true });
-    } else {
       this.setState({ hasTrunfo: false });
+    } else {
+      this.setState({ hasTrunfo: true });
     }
   }
 
@@ -118,6 +118,16 @@ class App extends React.Component {
           cardRare={ state.cardRare }
           cardTrunfo={ state.cardTrunfo }
         />
+
+        <section>
+          {state.saveCard.map((cardGame) => (
+            <div key={ cardGame.cardName }>
+              <Card
+                { ...cardGame }
+              />
+            </div>
+          ))}
+        </section>
       </div>
     );
   }
