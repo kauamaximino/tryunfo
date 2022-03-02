@@ -20,7 +20,7 @@ class App extends React.Component {
     };
   }
 
-  changeState = ({ target: { checked, type, name, value } }) => {
+  onInputChange = ({ target: { checked, type, name, value } }) => {
     const result = type === 'checkbox' ? checked : value;
     this.setState({
       [name]: result,
@@ -79,34 +79,33 @@ class App extends React.Component {
   }
 
   render() {
-    const {
-      cardName,
-      cardDescription,
-      cardAttr1,
-      cardAttr2,
-      cardAttr3,
-      cardImage,
-      cardRare,
-      cardTrunfo,
-      isSaveButtonDisabled,
-    } = this.state;
+    const { state, onSaveButtonClick, onInputChange } = this;
 
     return (
       <div>
         <Form
-          isSaveButtonDisabled={ isSaveButtonDisabled }
-          onInputChange={ this.changeState }
-          onSaveButtonClick={ this.onSaveButtonClick }
+          cardName={ state.cardName }
+          cardDescription={ state.cardDescription }
+          cardAttr1={ state.cardAttr1 }
+          cardAttr2={ state.cardAttr2 }
+          cardAttr3={ state.cardAttr3 }
+          cardImage={ state.cardImage }
+          cardRare={ state.cardRare }
+          cardTrunfo={ state.cardTrunfo }
+          hasTrunfo={ state.hasTrunfo }
+          isSaveButtonDisabled={ state.isSaveButtonDisabled }
+          onSaveButtonClick={ onSaveButtonClick }
+          onInputChange={ onInputChange }
         />
         <Card
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
+          cardName={ state.cardName }
+          cardDescription={ state.cardDescription }
+          cardAttr1={ state.cardAttr1 }
+          cardAttr2={ state.cardAttr2 }
+          cardAttr3={ state.cardAttr3 }
+          cardImage={ state.cardImage }
+          cardRare={ state.cardRare }
+          cardTrunfo={ state.cardTrunfo }
         />
       </div>
     );
